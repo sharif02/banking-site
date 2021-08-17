@@ -1,33 +1,51 @@
-
 function inputValue(inputId) {
     const getDedpoField = document.getElementById(inputId);
     const getDepoinput = getDedpoField.value;
     const getFloat = parseFloat(getDepoinput);
-    getDedpoField.value = ' ';
+    getDedpoField.value = '';
     return getFloat;
-}
-function getElement(elementId) {
-    const getPreBallenceField = document.getElementById(elementId);
-    const getPreballence = getPreBallenceField.innerText;
-    const getPreballtoFloat = parseFloat(getPreballence);
-
 }
 
 document.getElementById('deposit-button').addEventListener('click', function () {
-    // get deposite field and deposite input and convert to float from string
-    const getFloat = inputValue('deposite-input');
+    //call function
+    const setFlotvalue = inputValue('deposite-input');
 
-    //get previus deposite ballance and convert to float from string
     const getPreDepoField = document.getElementById('deposite-amount');
-    const getDepoText = getPreDepoField.innerText;
-    const gettextFloat = parseFloat(getDepoText);
-    getPreDepoField.innerText = '';
+    const getPreDepoValue = getPreDepoField.innerText;
+    const setPrevaluefloat = parseFloat(getPreDepoValue);
 
-    // multiple by current and previus depo ballence
-    const getTotalDepo = getFloat + gettextFloat;
-    getPreDepoField.innerText = getTotalDepo;
+    const totalDepoAmount = setFlotvalue + setPrevaluefloat;
+    getPreDepoField.innerText = totalDepoAmount;
 
-    //get previus Total Ballence and Update
-    getElement('total-ballence');
-    getPreBallenceField.innerText = grtTotalDepo + getPreballtoFloat;
+    // get PreTotal Ballance and multiple by depoAmount
+    const getPreTotal = document.getElementById('total-ballence');
+    const getpreTotalValue = getPreTotal.innerText;
+    const setFloatPreValue = parseFloat(getpreTotalValue);
+
+    const updateTotalBallence = setFloatPreValue + setFlotvalue;
+    getPreTotal.innerText = updateTotalBallence;
+
+    getDepofield.value = '';
+})
+
+document.getElementById('withdraw-button').addEventListener('click', function () {
+    //call 
+    const setwithdovalue = inputValue('withdraw-input');
+
+    const getPrewithdoField = document.getElementById('withdraw-amount');
+    const getPrewithdoValue = getPrewithdoField.innerText;
+    const setPrevaluefloat = parseFloat(getPrewithdoValue);
+
+    const totalwithdoAmount = setwithdovalue + setPrevaluefloat;
+    getPrewithdoField.innerText = totalwithdoAmount;
+
+    // get withdoTotal Ballance and multiple by PreTotalBallence
+    const getPreTotal = document.getElementById('total-ballence');
+    const getpreTotalValue = getPreTotal.innerText;
+    const setFloatPreValue = parseFloat(getpreTotalValue);
+
+    const updateTotalBallence = setFloatPreValue - setwithdovalue;
+    getPreTotal.innerText = updateTotalBallence;
+
+    getWithdofield.value = '';
 })
