@@ -47,5 +47,5 @@ document.getElementById('withdraw-button').addEventListener('click', function ()
     const updateTotalBallence = setFloatPreValue - setwithdovalue;
     getPreTotal.innerText = updateTotalBallence;
 
-    getWithdofield.value = '';
+    getWithdofield.value = ' ';
 })
