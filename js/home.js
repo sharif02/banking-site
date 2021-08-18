@@ -25,7 +25,6 @@ document.getElementById('deposit-button').addEventListener('click', function () 
     const updateTotalBallence = setFloatPreValue + setFlotvalue;
     getPreTotal.innerText = updateTotalBallence;
 
-    getDepofield.value = '';
 })
 
 document.getElementById('withdraw-button').addEventListener('click', function () {
@@ -47,5 +46,5 @@ document.getElementById('withdraw-button').addEventListener('click', function ()
     const updateTotalBallence = setFloatPreValue - setwithdovalue;
     getPreTotal.innerText = updateTotalBallence;
 
-    getWithdofield.value = ' ';
+
 })
